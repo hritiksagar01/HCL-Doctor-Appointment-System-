@@ -1,0 +1,27 @@
+@if (authService.isAuthenticated()) {
+  <header class="topbar">
+    <div class="topbar-inner">
+      <span class="topbar-brand">StoicCare</span>
+
+      <nav class="topbar-nav">
+        <a routerLink="/mode">Find Doctors</a>
+        <a routerLink="/appointments">Appointments</a>
+      </nav>
+
+      <div class="topbar-actions">
+        <div class="topbar-user">
+          <span class="topbar-user-name">{{ authService.currentUser()?.fullName }}</span>
+          <span class="topbar-user-email">{{ authService.currentUser()?.email }}</span>
+        </div>
+        <button class="btn btn-signout" type="button" (click)="signOut()">
+          <span class="material-symbols-outlined" style="font-size:18px;">logout</span>
+          Sign out
+        </button>
+      </div>
+    </div>
+  </header>
+}
+
+<main>
+  <router-outlet />
+</main>

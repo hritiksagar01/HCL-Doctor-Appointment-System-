@@ -1,0 +1,21 @@
+<main class="mode-page">
+  <div class="mode-grid">
+    <!-- Online Appointment Option -->
+    <button class="mode-card" type="button" (click)="selectMode('Online')">
+      <div class="mode-icon mode-icon--primary">
+        <span class="material-symbols-outlined" style="font-size: 2.5rem;">videocam</span>
+      </div>
+      <span class="mode-title font-headline">Online Appointment</span>
+      <span class="mode-subtitle">Continue with a remote video consultation</span>
+    </button>
+
+    <!-- Offline Appointment Option -->
+    <button class="mode-card" type="button" (click)="selectMode('Offline')">
+      <div class="mode-icon mode-icon--secondary">
+        <span class="material-symbols-outlined" style="font-size: 2.5rem;">home_health</span>
+      </div>
+      <span class="mode-title font-headline">Offline Appointment</span>
+      <span class="mode-subtitle">Continue with an in-clinic visit</span>
+    </button>
+  </div>
+</main>

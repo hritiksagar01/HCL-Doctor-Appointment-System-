@@ -1,0 +1,53 @@
+<section class="page-shell">
+  <header class="doc-header">
+    <div>
+      <h1 class="doc-title font-headline">Available Specialists</h1>
+      <p class="doc-description">
+        Mode: <strong>{{ selectedMode() }}</strong>
+        <span class="dot-sep">•</span>
+        Specialty: <strong>{{ selectedSpecialty()?.specialtyName }}</strong>
+      </p>
+    </div>
+    <button class="btn btn-secondary" type="button" (click)="goBack()">
+      <span class="material-symbols-outlined" style="font-size:18px;">arrow_back</span> Back
+    </button>
+  </header>
+
+  @if (loading()) {
+    <div class="card"><p class="empty-state">Loading doctors...</p></div>
+  } @else if (error()) {
+    <div class="card"><p class="form-error">{{ error() }}</p></div>
+  } @else if (data().length === 0) {
+    <div class="card"><p class="empty-state">No doctors are available for this selection.</p></div>
+  } @else {
+    <div class="doc-grid">
+      @for (doctor of data(); track doctor.doctorId) {
+        <article class="doc-card ambient-shadow">
+          <div class="doc-profile">
+            <div class="doc-avatar">
+              <div class="avatar-placeholder">
+                <span class="material-symbols-outlined" style="font-size:2rem;color:var(--sc-on-surface-variant);">person</span>
+              </div>
+              <span class="online-dot"></span>
+            </div>
+            <div class="doc-info">
+              <h3 class="doc-name font-headline">{{ doctor.doctorName }}</h3>
+              <p class="doc-specialty">{{ doctor.specialtyName }}</p>
+            </div>
+          </div>
+          <div class="doc-details">
+            <div class="detail-row">
+              <span class="detail-label">Experience</span>
+              <span class="detail-value">{{ doctor.experience }} Years</span>
+            </div>
+            <div class="detail-row">
+              <span class="detail-label">Mode</span>
+              <span class="badge badge-tertiary">{{ doctor.mode }}</span>
+            </div>
+          </div>
+          <button class="btn btn-primary btn-full" type="button" (click)="viewSlots(doctor)">View Slots</button>
+        </article>
+      }
+    </div>
+  }
+</section>

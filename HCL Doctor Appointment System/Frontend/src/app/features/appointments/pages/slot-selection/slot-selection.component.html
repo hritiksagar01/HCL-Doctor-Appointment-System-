@@ -1,0 +1,77 @@
+<section class="page-shell slot-shell">
+  <div class="slot-doctor-header">
+    <div class="slot-doctor-avatar">
+      <div class="avatar-circle">
+        <span class="material-symbols-outlined" style="font-size:2.5rem;color:var(--sc-on-surface-variant);">person</span>
+      </div>
+      <div class="verified-badge">
+        <span class="material-symbols-outlined" style="font-size:14px;color:white;font-variation-settings:'FILL' 1;">verified</span>
+      </div>
+    </div>
+    <div class="slot-doctor-info">
+      <h1 class="slot-doctor-name font-headline">{{ doctor()?.doctorName }}</h1>
+      <p class="slot-doctor-spec">
+        <span class="material-symbols-outlined" style="font-size:16px;">medical_services</span>
+        {{ doctor()?.specialtyName }} • {{ mode() }}
+      </p>
+      <div class="slot-tags">
+        <span class="badge badge-surface">{{ doctor()?.experience }} Yrs Exp</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="slot-section">
+    <div class="slot-section-header">
+      <h2 class="slot-section-title font-headline">Available Slots</h2>
+      <button class="btn btn-secondary" type="button" (click)="goBack()">
+        <span class="material-symbols-outlined" style="font-size:18px;">arrow_back</span> Back
+      </button>
+    </div>
+
+    @if (loading()) {
+      <div class="card"><p class="empty-state">Loading slots...</p></div>
+    } @else if (error()) {
+      <div class="card"><p class="form-error">{{ error() }}</p></div>
+    } @else if (data().length === 0) {
+      <div class="card"><p class="empty-state">No slots are available for this doctor.</p></div>
+    } @else {
+      <div class="slot-container">
+        @for (slot of data(); track slot.slotId) {
+          @if (slot.isBooked) {
+            <div class="slot-item slot-item--booked">
+              <div class="slot-item-content">
+                <div class="slot-date-box slot-date-box--muted">
+                  <span class="slot-date-month font-headline">{{ getMonth(slot.slotDate) }}</span>
+                  <span class="slot-date-day font-headline">{{ getDay(slot.slotDate) }}</span>
+                </div>
+                <div>
+                  <p class="slot-time font-headline">{{ formatTimeRange(slot.startTime, slot.endTime) }}</p>
+                  <div class="slot-status"><span class="slot-dot slot-dot--booked"></span><span class="slot-status-label">Booked</span></div>
+                </div>
+              </div>
+              <span class="material-symbols-outlined" style="font-size:1.5rem;color:var(--sc-outline);">block</span>
+            </div>
+          } @else {
+            <button class="slot-item slot-item--available" type="button" (click)="selectSlot(slot)">
+              <div class="slot-item-content">
+                <div class="slot-date-box">
+                  <span class="slot-date-month font-headline">{{ getMonth(slot.slotDate) }}</span>
+                  <span class="slot-date-day font-headline">{{ getDay(slot.slotDate) }}</span>
+                </div>
+                <div>
+                  <p class="slot-time font-headline">{{ formatTimeRange(slot.startTime, slot.endTime) }}</p>
+                  <div class="slot-status"><span class="slot-dot slot-dot--available"></span><span class="slot-status-label">Available</span></div>
+                </div>
+              </div>
+              <span class="material-symbols-outlined slot-select-icon" style="font-size:1.5rem;">arrow_forward</span>
+            </button>
+          }
+        }
+      </div>
+      <div class="slot-info">
+        <div class="slot-info-icon"><span class="material-symbols-outlined" style="color:var(--sc-primary);">info</span></div>
+        <p class="slot-info-text">Insurance coverage will be verified automatically after selection. You can cancel up to 24 hours before.</p>
+      </div>
+    }
+  </section>
+</section>

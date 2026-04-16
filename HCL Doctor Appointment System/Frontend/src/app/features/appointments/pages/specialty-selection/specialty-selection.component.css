@@ -1,0 +1,115 @@
+.spec-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+}
+
+.spec-title {
+  font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--sc-on-surface);
+  margin: 0 0 0.75rem;
+  line-height: 1.15;
+}
+
+.spec-description {
+  margin: 0;
+  color: var(--sc-on-surface-variant);
+  max-width: 40rem;
+  line-height: 1.6;
+}
+
+/* Bento Grid */
+.spec-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+  gap: 1.25rem;
+}
+
+.spec-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1.5rem;
+  background: var(--sc-surface-container-lowest);
+  border-radius: var(--sc-radius-xl);
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.spec-card:hover {
+  background: rgba(214, 227, 255, 0.15);
+  transform: translateY(-2px);
+}
+
+.spec-card:active {
+  transform: scale(0.98);
+}
+
+.spec-icon {
+  width: 3rem;
+  height: 3rem;
+  border-radius: var(--sc-radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.spec-icon--primary {
+  background: rgba(0, 93, 182, 0.1);
+  color: var(--sc-primary);
+}
+
+.spec-card:hover .spec-icon--primary {
+  background: var(--sc-primary);
+  color: white;
+}
+
+.spec-icon--tertiary {
+  background: rgba(93, 92, 120, 0.1);
+  color: var(--sc-tertiary);
+}
+
+.spec-card:hover .spec-icon--tertiary {
+  background: var(--sc-tertiary);
+  color: white;
+}
+
+.spec-icon--secondary {
+  background: rgba(73, 99, 111, 0.1);
+  color: var(--sc-secondary);
+}
+
+.spec-card:hover .spec-icon--secondary {
+  background: var(--sc-secondary);
+  color: white;
+}
+
+.spec-card-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--sc-on-surface);
+  margin: 0;
+}
+
+.spec-card-subtitle {
+  font-size: 0.8rem;
+  color: var(--sc-on-surface-variant);
+  margin: 0.25rem 0 0;
+}
+
+@media (max-width: 640px) {
+  .spec-header {
+    flex-direction: column;
+  }
+
+  .spec-grid {
+    grid-template-columns: 1fr;
+  }
+}

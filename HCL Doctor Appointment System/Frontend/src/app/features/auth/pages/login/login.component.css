@@ -1,0 +1,156 @@
+.auth-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.auth-card {
+  width: min(100%, 26rem);
+  background: var(--sc-surface-container-lowest);
+  border-radius: var(--sc-radius-2xl);
+  padding: 2.5rem 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+.auth-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.auth-brand {
+  font-size: 1.75rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--sc-on-surface);
+  margin: 0 0 0.5rem;
+}
+
+.auth-subtitle {
+  margin: 0;
+  font-size: 0.875rem;
+  color: var(--sc-on-surface-variant);
+}
+
+/* Tabs */
+.auth-tabs {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 1.75rem;
+}
+
+.auth-tab {
+  font-family: var(--sc-font-headline);
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--sc-on-surface-variant);
+  background: none;
+  border: none;
+  padding-bottom: 0.5rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  border-bottom: 2px solid transparent;
+}
+
+.auth-tab.is-active {
+  color: var(--sc-primary);
+  border-bottom-color: var(--sc-primary);
+}
+
+.auth-tab:not(.is-active):hover {
+  color: var(--sc-on-surface);
+}
+
+/* Field label row */
+.field-label-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.125rem;
+}
+
+.forgot-link {
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: var(--sc-primary);
+  transition: color 0.2s;
+}
+
+.forgot-link:hover {
+  color: var(--sc-primary-dim);
+}
+
+/* Demo box */
+.demo-box {
+  margin-top: 1.75rem;
+  padding: 1rem;
+  border-radius: var(--sc-radius-lg);
+  background: var(--sc-surface-container-low);
+}
+
+.demo-title {
+  margin: 0 0 0.25rem;
+  font-weight: 700;
+  font-size: 0.875rem;
+  color: var(--sc-on-surface);
+}
+
+.demo-copy {
+  margin: 0 0 0.75rem;
+  font-size: 0.8rem;
+  color: var(--sc-on-surface-variant);
+}
+
+/* Footer */
+.auth-footer {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.auth-footer p {
+  font-size: 0.72rem;
+  color: var(--sc-on-surface-variant);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.auth-footer a {
+  color: var(--sc-primary);
+}
+
+.auth-footer a:hover {
+  text-decoration: underline;
+}
+
+/* Background Tonal Shifts */
+.bg-tonal {
+  position: fixed;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.bg-tonal--left {
+  top: 0;
+  left: 0;
+  width: 33%;
+  height: 100%;
+  background: var(--sc-surface-container-low);
+  opacity: 0.5;
+}
+
+.bg-tonal--right {
+  bottom: 0;
+  right: 0;
+  width: 50%;
+  height: 50%;
+  background: var(--sc-primary-container);
+  opacity: 0.08;
+  border-radius: 100% 0 0 0;
+  filter: blur(120px);
+}

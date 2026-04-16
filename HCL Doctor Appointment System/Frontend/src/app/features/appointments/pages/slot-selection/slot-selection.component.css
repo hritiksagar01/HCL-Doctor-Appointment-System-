@@ -1,0 +1,242 @@
+.slot-shell {
+  max-width: 56rem;
+}
+
+/* Doctor Header */
+.slot-doctor-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.slot-doctor-avatar {
+  position: relative;
+}
+
+.avatar-circle {
+  width: 6rem;
+  height: 6rem;
+  border-radius: 50%;
+  background: var(--sc-surface-container);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: var(--sc-ghost-border);
+}
+
+.verified-badge {
+  position: absolute;
+  bottom: 0.2rem;
+  right: 0.2rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  background: var(--sc-primary);
+  border-radius: 50%;
+  border: 2px solid var(--sc-background);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slot-doctor-name {
+  font-size: 1.75rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--sc-on-surface);
+  margin: 0 0 0.5rem;
+}
+
+.slot-doctor-spec {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--sc-secondary);
+  font-weight: 500;
+  margin: 0 0 0.75rem;
+  justify-content: center;
+}
+
+.slot-tags {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Section */
+.slot-section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.slot-section-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+/* Slots Container */
+.slot-container {
+  background: var(--sc-surface-container-low);
+  border-radius: var(--sc-radius-xl);
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.slot-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  border-radius: var(--sc-radius-lg);
+  transition: all 0.2s ease;
+}
+
+.slot-item--available {
+  background: var(--sc-surface-container-lowest);
+  box-shadow: var(--sc-shadow-sm);
+  cursor: pointer;
+  border: none;
+  width: 100%;
+  text-align: left;
+}
+
+.slot-item--available:hover {
+  box-shadow: 0 0 0 2px rgba(0, 93, 182, 0.15);
+}
+
+.slot-item--booked {
+  background: var(--sc-surface-container-low);
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.slot-item-content {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+/* Date Box */
+.slot-date-box {
+  width: 4rem;
+  height: 4rem;
+  border-radius: var(--sc-radius-md);
+  background: var(--sc-surface-container-high);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.slot-date-box--muted {
+  background: rgba(227, 233, 236, 0.5);
+  filter: grayscale(1);
+}
+
+.slot-date-month {
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: var(--sc-secondary);
+  text-transform: uppercase;
+}
+
+.slot-date-day {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--sc-on-surface);
+}
+
+.slot-time {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--sc-on-surface);
+  margin: 0 0 0.25rem;
+}
+
+/* Status */
+.slot-status {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.slot-dot {
+  width: 0.4rem;
+  height: 0.4rem;
+  border-radius: 50%;
+}
+
+.slot-dot--available {
+  background: #22c55e;
+}
+
+.slot-dot--booked {
+  background: var(--sc-outline);
+}
+
+.slot-status-label {
+  font-size: 0.7rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--sc-on-surface-variant);
+}
+
+.slot-select-icon {
+  color: var(--sc-outline-variant);
+  opacity: 0.2;
+  transition: opacity 0.2s;
+}
+
+.slot-item--available:hover .slot-select-icon {
+  opacity: 0.6;
+  color: var(--sc-primary);
+}
+
+/* Info Note */
+.slot-info {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-top: 2rem;
+  max-width: 28rem;
+}
+
+.slot-info-icon {
+  background: rgba(214, 227, 255, 0.4);
+  padding: 0.5rem;
+  border-radius: var(--sc-radius-md);
+  flex-shrink: 0;
+}
+
+.slot-info-text {
+  font-size: 0.85rem;
+  color: var(--sc-on-surface-variant);
+  line-height: 1.6;
+  margin: 0;
+}
+
+@media (max-width: 640px) {
+  .slot-doctor-header {
+    text-align: center;
+  }
+
+  .slot-section-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  .slot-item-content {
+    gap: 1rem;
+  }
+}

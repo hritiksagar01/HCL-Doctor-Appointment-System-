@@ -1,0 +1,84 @@
+<section class="page-shell confirm-shell">
+  <div class="progress-bar">
+    <div class="progress-step">
+      <div class="progress-circle progress-circle--done">1</div>
+      <span class="progress-label">Details</span>
+    </div>
+    <div class="progress-line"></div>
+    <div class="progress-step">
+      <div class="progress-circle progress-circle--active">2</div>
+      <span class="progress-label progress-label--active">Confirm</span>
+    </div>
+  </div>
+
+  <div class="confirm-heading">
+    <h1 class="confirm-title font-headline">Review Appointment</h1>
+    <p class="confirm-subtitle">Please verify your consultation details before we finalize your booking with our specialist.</p>
+  </div>
+
+  <div class="confirm-bento ambient-shadow">
+    <div class="bento-doctor">
+      <div class="bento-doctor-avatar">
+        <div class="bento-avatar">
+          <span class="material-symbols-outlined" style="font-size:2rem;color:var(--sc-on-surface-variant);">person</span>
+        </div>
+        <span class="bento-online-dot"></span>
+      </div>
+      <div class="bento-doctor-info">
+        <span class="badge badge-primary" style="margin-bottom:0.5rem;">Primary Specialist</span>
+        <h2 class="bento-doctor-name font-headline">{{ doctor()?.doctorName }}</h2>
+        <p class="bento-doctor-spec">{{ doctor()?.specialtyName }}</p>
+      </div>
+    </div>
+
+    <div class="bento-details-grid">
+      <div class="bento-segment">
+        <span class="bento-eyebrow">Scheduled For</span>
+        <div class="bento-detail-row">
+          <span class="material-symbols-outlined" style="font-size:1.75rem;color:var(--sc-primary);">calendar_today</span>
+          <div>
+            <h3 class="bento-detail-title font-headline">{{ slot() ? formatDate(slot()!.slotDate) : '' }}</h3>
+            <p class="bento-detail-copy">{{ slot() ? formatTimeRange(slot()!.startTime, slot()!.endTime) : '' }}</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="bento-segment">
+        <span class="bento-eyebrow">Appointment Mode</span>
+        <div class="bento-detail-row">
+          <span class="material-symbols-outlined" style="font-size:1.75rem;color:var(--sc-primary);">
+            {{ mode() === 'Online' ? 'video_chat' : 'location_on' }}
+          </span>
+          <div>
+            <h3 class="bento-detail-title font-headline">{{ mode() === 'Online' ? 'Video Call' : 'In-Clinic' }}</h3>
+            <p class="bento-detail-copy">{{ mode() === 'Online' ? 'Telehealth Secure Link' : 'Clinic Visit' }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="confirm-actions">
+    @if (errorMessage()) {
+      <p class="form-error">{{ errorMessage() }}</p>
+    }
+
+    <button
+      class="btn btn-primary btn-full btn-lg"
+      type="button"
+      [disabled]="isSubmitting()"
+      (click)="confirmAppointment()"
+    >
+      {{ isSubmitting() ? 'Confirming...' : 'Confirm Appointment' }}
+    </button>
+
+    <button class="btn btn-ghost btn-full" type="button" (click)="goBack()">
+      <span class="material-symbols-outlined" style="font-size:16px;">edit</span>
+      Modify Details
+    </button>
+  </div>
+
+  <p class="confirm-policy">
+    By confirming, you agree to StoicCare's <a href="#">Terms of Service</a>. Cancellations made less than 24 hours in advance may be subject to a fee.
+  </p>
+</section>

@@ -1,0 +1,70 @@
+<section class="page-shell apt-shell">
+  <div class="apt-header">
+    <div>
+      <h1 class="apt-title font-headline">My Appointments</h1>
+      <p class="apt-subtitle">View and manage your upcoming consultations</p>
+    </div>
+    <button class="btn btn-secondary" type="button" (click)="goBack()">Book New</button>
+  </div>
+
+  @if (loading()) {
+    <div class="card"><p class="empty-state">Loading your appointments...</p></div>
+  } @else if (error()) {
+    <div class="card"><p class="form-error">{{ error() }}</p></div>
+  } @else if (data().length === 0) {
+    <div class="card">
+      <div class="empty-state">
+        <span class="material-symbols-outlined" style="font-size:3rem;color:var(--sc-outline-variant);margin-bottom:1rem;">calendar_month</span>
+        <h3>No Appointments Found</h3>
+        <p>You haven't booked any consultations yet.</p>
+        <button class="btn btn-primary" style="margin-top:1.5rem;" (click)="goBack()">Book an Appointment</button>
+      </div>
+    </div>
+  } @else {
+    <div class="apt-grid">
+      @for (apt of data(); track apt.appointmentId) {
+        <div class="apt-card ambient-shadow hover-lift">
+          <div class="apt-card-header">
+            <div class="apt-doctor-info">
+              <div class="apt-avatar"><span class="material-symbols-outlined">person</span></div>
+              <div>
+                <h3 class="apt-doctor-name font-headline">{{ apt.doctorName }}</h3>
+                <span class="apt-doctor-spec">{{ apt.specialtyName }}</span>
+              </div>
+            </div>
+            <div class="badge badge-surface">
+              <span class="material-symbols-outlined" style="font-size:14px;margin-right:4px;">{{ apt.mode === 'Online' ? 'videocam' : 'location_on' }}</span>
+              {{ apt.mode }}
+            </div>
+          </div>
+          <div class="apt-card-body">
+            <div class="apt-detail">
+              <span class="material-symbols-outlined apt-detail-icon">calendar_today</span>
+              <div>
+                <div class="apt-detail-label">Date & Time</div>
+                <div class="apt-detail-value">{{ formatDate(apt.slotDate) }} • {{ formatTimeRange(apt.startTime, apt.endTime) }}</div>
+              </div>
+            </div>
+            <div class="apt-detail">
+              <span class="material-symbols-outlined apt-detail-icon">{{ apt.mode === 'Online' ? 'link' : 'map' }}</span>
+              <div>
+                <div class="apt-detail-label">{{ apt.mode === 'Online' ? 'Meeting Link' : 'Clinic Address' }}</div>
+                <div class="apt-detail-value">
+                  @if (apt.mode === 'Online') {
+                    <a [href]="apt.meetingLink" target="_blank" class="apt-link">Join Consultation</a>
+                  } @else { {{ apt.clinicAddress }} }
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="apt-card-footer">
+            <span class="apt-status apt-status--confirmed">
+              <span class="material-symbols-outlined" style="font-size:16px;">check_circle</span> {{ apt.status }}
+            </span>
+            <span class="apt-booking-date">Booked on {{ apt.bookingDate | date:'mediumDate' }}</span>
+          </div>
+        </div>
+      }
+    </div>
+  }
+</section>

@@ -1,0 +1,9 @@
+[
+  { "specialtyId": 1, "specialtyName": "Cardiology" },
+  { "specialtyId": 2, "specialtyName": "Dermatology" },
+  { "specialtyId": 3, "specialtyName": "Neurology" },
+  { "specialtyId": 4, "specialtyName": "Pediatrics" },
+  { "specialtyId": 5, "specialtyName": "Orthopedics" },
+  { "specialtyId": 6, "specialtyName": "Psychiatry" },
+  { "specialtyId": 7, "specialtyName": "General Medicine" }
+]

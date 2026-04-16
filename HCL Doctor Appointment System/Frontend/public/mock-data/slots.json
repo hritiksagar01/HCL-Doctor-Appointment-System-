@@ -1,0 +1,258 @@
+[
+  {
+    "slotId": 1,
+    "doctorId": 101,
+    "slotDate": "2026-04-20",
+    "startTime": "09:00:00",
+    "endTime": "09:30:00",
+    "isBooked": false
+  },
+  {
+    "slotId": 2,
+    "doctorId": 101,
+    "slotDate": "2026-04-20",
+    "startTime": "11:00:00",
+    "endTime": "11:30:00",
+    "isBooked": true
+  },
+  {
+    "slotId": 3,
+    "doctorId": 101,
+    "slotDate": "2026-04-21",
+    "startTime": "15:00:00",
+    "endTime": "15:30:00",
+    "isBooked": false
+  },
+  {
+    "slotId": 4,
+    "doctorId": 102,
+    "slotDate": "2026-04-20",
+    "startTime": "10:00:00",
+    "endTime": "10:30:00",
+    "isBooked": false
+  },
+  {
+    "slotId": 5,
+    "doctorId": 102,
+    "slotDate": "2026-04-21",
+    "startTime": "13:00:00",
+    "endTime": "13:30:00",
+    "isBooked": false
+  },
+  {
+    "slotId": 6,
+    "doctorId": 102,
+    "slotDate": "2026-04-22",
+    "startTime": "16:00:00",
+    "endTime": "16:30:00",
+    "isBooked": true
+  },
+  {
+    "slotId": 7,
+    "doctorId": 103,
+    "slotDate": "2026-04-20",
+    "startTime": "09:30:00",
+    "endTime": "10:00:00",
+    "isBooked": false
+  },
+  {
+    "slotId": 8,
+    "doctorId": 103,
+    "slotDate": "2026-04-21",
+    "startTime": "12:00:00",
+    "endTime": "12:30:00",
+    "isBooked": false
+  },
+  {
+    "slotId": 10,
+    "doctorId": 104,
+    "slotDate": "2026-04-20",
+    "startTime": "11:30:00",
+    "endTime": "12:00:00",
+    "isBooked": false
+  },
+  {
+    "slotId": 11,
+    "doctorId": 104,
+    "slotDate": "2026-04-21",
+    "startTime": "14:00:00",
+    "endTime": "14:30:00",
+    "isBooked": false
+  },
+  {
+    "slotId": 13,
+    "doctorId": 105,
+    "slotDate": "2026-04-20",
+    "startTime": "08:30:00",
+    "endTime": "09:00:00",
+    "isBooked": false
+  },
+  {
+    "slotId": 14,
+    "doctorId": 105,
+    "slotDate": "2026-04-21",
+    "startTime": "10:30:00",
+    "endTime": "11:00:00",
+    "isBooked": true
+  },
+  {
+    "slotId": 16,
+    "doctorId": 106,
+    "slotDate": "2026-04-20",
+    "startTime": "09:15:00",
+    "endTime": "09:45:00",
+    "isBooked": false
+  },
+  {
+    "slotId": 17,
+    "doctorId": 106,
+    "slotDate": "2026-04-21",
+    "startTime": "13:15:00",
+    "endTime": "13:45:00",
+    "isBooked": false
+  },
+  {
+    "slotId": 19,
+    "doctorId": 107,
+    "slotDate": "2026-04-20",
+    "startTime": "10:15:00",
+    "endTime": "10:45:00",
+    "isBooked": false
+  },
+  {
+    "slotId": 20,
+    "doctorId": 107,
+    "slotDate": "2026-04-21",
+    "startTime": "12:45:00",
+    "endTime": "13:15:00",
+    "isBooked": true
+  },
+  {
+    "slotId": 22,
+    "doctorId": 108,
+    "slotDate": "2026-04-22",
+    "startTime": "11:15:00",
+    "endTime": "11:45:00",
+    "isBooked": false
+  },
+  {
+    "slotId": 23,
+    "doctorId": 108,
+    "slotDate": "2026-04-23",
+    "startTime": "15:15:00",
+    "endTime": "15:45:00",
+    "isBooked": false
+  },
+  {
+    "slotId": 25,
+    "doctorId": 109,
+    "slotDate": "2026-04-20",
+    "startTime": "08:45:00",
+    "endTime": "09:15:00",
+    "isBooked": false
+  },
+  {
+    "slotId": 26,
+    "doctorId": 109,
+    "slotDate": "2026-04-21",
+    "startTime": "12:15:00",
+    "endTime": "12:45:00",
+    "isBooked": true
+  },
+  {
+    "slotId": 28,
+    "doctorId": 110,
+    "slotDate": "2026-04-20",
+    "startTime": "09:45:00",
+    "endTime": "10:15:00",
+    "isBooked": false
+  },
+  {
+    "slotId": 29,
+    "doctorId": 110,
+    "slotDate": "2026-04-21",
+    "startTime": "14:45:00",
+    "endTime": "15:15:00",
+    "isBooked": true
+  },
+  {
+    "slotId": 31,
+    "doctorId": 111,
+    "slotDate": "2026-04-25",
+    "startTime": "10:45:00",
+    "endTime": "11:15:00",
+    "isBooked": false
+  },
+  {
+    "slotId": 32,
+    "doctorId": 111,
+    "slotDate": "2026-04-26",
+    "startTime": "13:30:00",
+    "endTime": "14:00:00",
+    "isBooked": true
+  },
+  {
+    "slotId": 34,
+    "doctorId": 112,
+    "slotDate": "2026-04-20",
+    "startTime": "11:45:00",
+    "endTime": "12:15:00",
+    "isBooked": false
+  },
+  {
+    "slotId": 35,
+    "doctorId": 112,
+    "slotDate": "2026-04-21",
+    "startTime": "15:45:00",
+    "endTime": "16:15:00",
+    "isBooked": false
+  },
+  {
+    "slotId": 37,
+    "doctorId": 113,
+    "slotDate": "2026-04-20",
+    "startTime": "10:00:00",
+    "endTime": "10:30:00",
+    "isBooked": false
+  },
+  {
+    "slotId": 38,
+    "doctorId": 113,
+    "slotDate": "2026-04-21",
+    "startTime": "11:00:00",
+    "endTime": "11:30:00",
+    "isBooked": false
+  },
+  {
+    "slotId": 40,
+    "doctorId": 114,
+    "slotDate": "2026-04-20",
+    "startTime": "09:00:00",
+    "endTime": "09:30:00",
+    "isBooked": false
+  },
+  {
+    "slotId": 41,
+    "doctorId": 114,
+    "slotDate": "2026-04-21",
+    "startTime": "14:00:00",
+    "endTime": "14:30:00",
+    "isBooked": false
+  },
+  {
+    "slotId": 43,
+    "doctorId": 115,
+    "slotDate": "2026-04-20",
+    "startTime": "16:00:00",
+    "endTime": "16:30:00",
+    "isBooked": false
+  },
+  {
+    "slotId": 44,
+    "doctorId": 115,
+    "slotDate": "2026-04-21",
+    "startTime": "17:00:00",
+    "endTime": "17:30:00",
+    "isBooked": true
+  }
+]

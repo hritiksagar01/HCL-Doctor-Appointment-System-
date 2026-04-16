@@ -1,0 +1,50 @@
+[
+  {
+    "appointmentId": 2001,
+    "userId": 1,
+    "doctorId": 101,
+    "slotId": 2,
+    "doctorName": "Dr. Julian Sterling",
+    "specialtyName": "Cardiology",
+    "mode": "Online",
+    "status": "Confirmed",
+    "bookingDate": "2026-04-12T09:15:00.000Z",
+    "slotDate": "2026-04-20",
+    "startTime": "11:00:00",
+    "endTime": "11:30:00",
+    "meetingLink": "https://meet.stoiccare.app/dr-julian-sterling-2",
+    "clinicAddress": null
+  },
+  {
+    "appointmentId": 2002,
+    "userId": 1,
+    "doctorId": 108,
+    "slotId": 12,
+    "doctorName": "Dr. Rohan Iyer",
+    "specialtyName": "Pediatrics",
+    "mode": "Offline",
+    "status": "Confirmed",
+    "bookingDate": "2026-04-14T10:00:00.000Z",
+    "slotDate": "2026-04-22",
+    "startTime": "17:00:00",
+    "endTime": "17:30:00",
+    "meetingLink": null,
+    "clinicAddress": "101 Child Wellness Centre, Banashankari, Bengaluru"
+  },
+  {
+    "appointmentId": 2003,
+    "userId": 1,
+    "doctorId": 111,
+    "slotId": 14,
+    "doctorName": "Dr. Daniel Fox",
+    "specialtyName": "Psychiatry",
+    "mode": "Online",
+    "status": "Confirmed",
+    "bookingDate": "2026-04-15T11:20:00.000Z",
+    "slotDate": "2026-04-25",
+    "startTime": "10:30:00",
+    "endTime": "11:00:00",
+    "meetingLink": "https://meet.stoiccare.app/dr-daniel-fox-14",
+    "clinicAddress": null
+  }
+]

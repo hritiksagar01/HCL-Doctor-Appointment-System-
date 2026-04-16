@@ -1,0 +1,99 @@
+<main class="auth-page">
+  <div class="auth-card ambient-shadow">
+    <div class="auth-header">
+      <h1 class="auth-brand font-headline">StoicCare</h1>
+      <p class="auth-subtitle">Precision care, simplified access.</p>
+    </div>
+
+    <div class="auth-tabs">
+      <button class="auth-tab" type="button" [class.is-active]="activeTab() === 'login'" (click)="switchTab('login')">Login</button>
+      <button class="auth-tab" type="button" [class.is-active]="activeTab() === 'register'" (click)="switchTab('register')">Register</button>
+    </div>
+
+    @if (errorMessage()) {
+      <p class="form-error">{{ errorMessage() }}</p>
+    }
+
+    @if (activeTab() === 'login') {
+      <form class="form-stack" [formGroup]="loginForm" (ngSubmit)="submitLogin()">
+        <div class="field-stack">
+          <label class="field-label" for="login-email">Email</label>
+          <div class="input-group">
+            <span class="material-symbols-outlined input-icon">mail</span>
+            <input id="login-email" class="input-field" type="email" formControlName="email" placeholder="name@example.com" />
+          </div>
+          @if (hasError('login', 'email', 'required')) { <p class="field-error">Email is required.</p> }
+          @if (hasError('login', 'email', 'email'))    { <p class="field-error">Enter a valid email address.</p> }
+        </div>
+
+        <div class="field-stack">
+          <div class="field-label-row">
+            <label class="field-label" for="login-password">Password</label>
+            <a class="forgot-link" href="#">Forgot?</a>
+          </div>
+          <div class="input-group">
+            <span class="material-symbols-outlined input-icon">lock</span>
+            <input id="login-password" class="input-field" type="password" formControlName="password" placeholder="••••••••" />
+          </div>
+          @if (hasError('login', 'password', 'required'))  { <p class="field-error">Password is required.</p> }
+          @if (hasError('login', 'password', 'minlength')) { <p class="field-error">Password must be at least 6 characters.</p> }
+        </div>
+
+        <button class="btn btn-primary btn-full btn-lg" type="submit" [disabled]="isSubmitting()">
+          <span>{{ isSubmitting() ? 'Signing in...' : 'Continue' }}</span>
+          @if (!isSubmitting()) {
+            <span class="material-symbols-outlined" style="font-size:18px;">arrow_forward</span>
+          }
+        </button>
+      </form>
+    } @else {
+      <form class="form-stack" [formGroup]="registerForm" (ngSubmit)="submitRegister()">
+        <div class="field-stack">
+          <label class="field-label" for="register-username">Username</label>
+          <div class="input-group">
+            <span class="material-symbols-outlined input-icon">person</span>
+            <input id="register-username" class="input-field" type="text" formControlName="username" placeholder="stoic_healer" />
+          </div>
+          @if (hasError('register', 'username', 'required')) { <p class="field-error">Username is required.</p> }
+        </div>
+
+        <div class="field-stack">
+          <label class="field-label" for="register-email">Email</label>
+          <div class="input-group">
+            <span class="material-symbols-outlined input-icon">mail</span>
+            <input id="register-email" class="input-field" type="email" formControlName="email" placeholder="care@stoic.com" />
+          </div>
+          @if (hasError('register', 'email', 'required')) { <p class="field-error">Email is required.</p> }
+          @if (hasError('register', 'email', 'email'))    { <p class="field-error">Enter a valid email address.</p> }
+        </div>
+
+        <div class="field-stack">
+          <label class="field-label" for="register-password">Password</label>
+          <div class="input-group">
+            <span class="material-symbols-outlined input-icon">lock</span>
+            <input id="register-password" class="input-field" type="password" formControlName="password" placeholder="••••••••" />
+          </div>
+          @if (hasError('register', 'password', 'required'))  { <p class="field-error">Password is required.</p> }
+          @if (hasError('register', 'password', 'minlength')) { <p class="field-error">Password must be at least 6 characters.</p> }
+        </div>
+
+        <button class="btn btn-primary btn-full btn-lg" type="submit" [disabled]="isSubmitting()">
+          {{ isSubmitting() ? 'Creating account...' : 'Register' }}
+        </button>
+      </form>
+    }
+
+    <div class="demo-box">
+      <p class="demo-title">Demo login</p>
+      <p class="demo-copy">{{ demoEmail }} / {{ demoPassword }}</p>
+      <button class="btn btn-secondary" type="button" (click)="useDemoCredentials()">Use demo credentials</button>
+    </div>
+
+    <div class="auth-footer">
+      <p>By continuing, you agree to StoicCare's<br><a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>.</p>
+    </div>
+  </div>
+
+  <div class="bg-tonal bg-tonal--left"></div>
+  <div class="bg-tonal bg-tonal--right"></div>
+</main>

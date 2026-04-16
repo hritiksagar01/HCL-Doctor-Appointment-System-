@@ -1,0 +1,31 @@
+<section class="page-shell">
+  <header class="spec-header">
+    <div>
+      <h1 class="spec-title font-headline">What specialty are you looking for?</h1>
+      <p class="spec-description">Choose a clinical specialty to find the most qualified experts for your consultation.</p>
+    </div>
+    <button class="btn btn-secondary" type="button" (click)="goBack()">
+      <span class="material-symbols-outlined" style="font-size:18px;">arrow_back</span> Back
+    </button>
+  </header>
+
+  @if (loading()) {
+    <div class="card"><p class="empty-state">Loading specialties...</p></div>
+  } @else if (error()) {
+    <div class="card"><p class="form-error">{{ error() }}</p></div>
+  } @else {
+    <div class="spec-grid">
+      @for (s of data(); track s.specialtyId; let i = $index) {
+        <button class="spec-card ambient-shadow" type="button" (click)="select(s)">
+          <div class="spec-icon" [class]="'spec-icon spec-icon--' + variant(i)">
+            <span class="material-symbols-outlined">{{ icon(s.specialtyName) }}</span>
+          </div>
+          <div>
+            <h3 class="spec-card-title font-headline">{{ s.specialtyName }}</h3>
+            <p class="spec-card-subtitle">Continue to available doctors</p>
+          </div>
+        </button>
+      }
+    </div>
+  }
+</section>

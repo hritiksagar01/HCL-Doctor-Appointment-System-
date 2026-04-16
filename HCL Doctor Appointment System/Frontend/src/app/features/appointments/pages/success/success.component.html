@@ -1,0 +1,74 @@
+<section class="page-shell success-shell">
+  <div class="success-content">
+    <!-- Animated Check Circle -->
+    <div class="success-icon-wrap">
+      <span class="material-symbols-outlined success-icon" style="font-variation-settings:'FILL' 1;">check_circle</span>
+    </div>
+
+    <h1 class="success-title font-headline">Appointment Confirmed!</h1>
+    <p class="success-subtitle">
+      Your consultation with {{ confirmation()?.doctorName }} has been successfully scheduled. A confirmation email has been sent to your registered address.
+    </p>
+
+    <!-- Appointment Details Bento Grid -->
+    <div class="success-grid">
+      <div class="success-card ambient-shadow">
+        <div class="success-card-icon-wrap">
+          <span class="material-symbols-outlined" style="font-size:1.5rem;color:var(--sc-on-surface-variant);">person</span>
+        </div>
+        <div>
+          <h3 class="success-card-title font-headline">{{ confirmation()?.doctorName }}</h3>
+          <p class="success-card-copy">{{ confirmation()?.specialtyName }}</p>
+        </div>
+      </div>
+
+      <div class="success-card ambient-shadow">
+        <div class="success-card-icon-wrap success-card-icon-wrap--secondary">
+          <span class="material-symbols-outlined" style="color:var(--sc-on-secondary-container);">calendar_today</span>
+        </div>
+        <div>
+          <h3 class="success-card-title font-headline">{{ confirmation() ? formatDate(confirmation()!.slotDate) : '' }}</h3>
+          <p class="success-card-copy">{{ confirmation() ? formatTimeRange(confirmation()!.startTime, confirmation()!.endTime) : '' }}</p>
+        </div>
+      </div>
+
+      @if (confirmation()?.meetingLink) {
+        <div class="success-mode-card success-mode-card--online">
+          <div class="success-mode-info">
+            <div class="success-card-icon-wrap success-card-icon-wrap--primary">
+              <span class="material-symbols-outlined" style="color:var(--sc-primary);">videocam</span>
+            </div>
+            <div>
+              <h3 class="success-card-title font-headline">Online Consultation</h3>
+              <p class="success-card-copy">{{ confirmation()?.meetingLink }}</p>
+            </div>
+          </div>
+        </div>
+      }
+
+      @if (confirmation()?.clinicAddress) {
+        <div class="success-mode-card">
+          <div class="success-mode-info">
+            <div class="success-card-icon-wrap success-card-icon-wrap--tertiary">
+              <span class="material-symbols-outlined" style="color:var(--sc-on-tertiary-container);">location_on</span>
+            </div>
+            <div>
+              <h3 class="success-card-title font-headline">Clinic Address</h3>
+              <p class="success-card-copy">{{ confirmation()?.clinicAddress }}</p>
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+
+    <!-- Action Buttons -->
+    <div class="success-actions">
+      <button class="btn btn-primary btn-lg" type="button" (click)="bookAnother()">
+        Book Another Appointment
+      </button>
+      <button class="btn btn-secondary btn-lg" type="button" (click)="viewAppointments()">
+        View Appointments
+      </button>
+    </div>
+  </div>
+</section>
